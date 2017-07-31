@@ -10,10 +10,11 @@ namespace hukusuke {
 		~request() {};
 
 		// Overload IF.
-		void request_if(const EX_STRUCT_INT  data);
-		void request_if(const EX_STRUCT_CHAR data);
-		void request_if(const EX_STRUCT_ENUM data);
-		void request_if(const EX_STRUCT_INFO data);
+		void request_if(const EX_STRUCT_INT  data    );
+		void request_if(const EX_STRUCT_CHAR data    );
+		void request_if(const EX_STRUCT_ENUM data    );
+		void request_if(const EX_STRUCT_INFO data    );
+		void request_if(const EX_STRUCT_PTR  data_ptr);
 
 	private:
 		// Union info.
@@ -22,6 +23,7 @@ namespace hukusuke {
 			EX_STRUCT_CHAR data_char;
 			EX_STRUCT_ENUM data_enum;
 			EX_STRUCT_INFO data_info;
+			EX_STRUCT_PTR  data_ptr;
 		};
 
 		EX_UNION data_union_;				// Union member.

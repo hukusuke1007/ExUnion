@@ -1,6 +1,6 @@
 #pragma once
 
-#define MAX_SIZE (5)
+#define MAX_SIZE (10)
 
 // Enum info.
 enum ENUM_DATA {
@@ -24,5 +24,9 @@ struct EX_STRUCT_ENUM {
 
 struct EX_STRUCT_INFO {
 	EX_STRUCT_ENUM	info;
+};
+
+struct EX_STRUCT_PTR {
+	char*			data;
 };
 
