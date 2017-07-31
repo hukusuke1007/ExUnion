@@ -1,0 +1,6 @@
+[ 15][            main] Start.
+[ 10][      request_if] EX_STRUCT_INT:  0
+[ 15][      request_if] EX_STRUCT_CHAR: CHAR
+[ 20][      request_if] EX_STRUCT_ENUM: 1
+[ 25][      request_if] EX_STRUCT_INFO: 2
+[ 38][            main] Terminate.
