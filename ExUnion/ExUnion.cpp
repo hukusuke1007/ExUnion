@@ -14,35 +14,23 @@ int main(void)
 {
 	LOG_OUTPUT("Start.");
 
-	// Define.
-	EX_STRUCT_INT data_int;
-	data_int.data = 0;
+	// データ定義.
+	int		value_int	 = 0;
+	char*	value_char_p = new char[MAX_SIZE+1];
+	memset(value_char_p, 0, MAX_SIZE+1);
+	strncpy(value_char_p, "CHAR_P", MAX_SIZE);
 
-	EX_STRUCT_CHAR data_char;
-	memset(data_char.data, 0, sizeof(data_char.data));
-	strncpy(data_char.data, "CHAR", sizeof(data_char.data)-1);
-	
-	EX_STRUCT_ENUM data_enum;
-	data_enum.data = ENUM_DATA_1;
+	string  value_string = "STRING";
 
-	EX_STRUCT_INFO data_info;
-	data_info.info.data = ENUM_DATA_2;
-
-	EX_STRUCT_PTR  data_ptr;
-	string str = "STRING";
-	data_ptr.data = new char[str.size()+1];		// 領域確保(NULL終端考慮).
-	memset(data_ptr.data, 0, str.size()+1);		// 初期化.
-	strcpy(data_ptr.data, str.c_str());			// 文字列設定.
-
-	// Request.
+	// リクエスト.
 	request request_instance;
-	request_instance.request_if(data_int );
-	request_instance.request_if(data_char);
-	request_instance.request_if(data_enum);
-	request_instance.request_if(data_info);
-	request_instance.request_if(data_ptr );
+	request_instance.request_if(value_int);
+	request_instance.request_if(value_char_p);
+	request_instance.request_if(value_string);
+	request_instance.output();
 
-	if (NULL != data_ptr.data) { delete data_ptr.data; data_ptr.data = NULL; }
+	// 後処理.
+	if (NULL != value_char_p) { delete value_char_p; value_char_p = NULL; }
 
 	LOG_OUTPUT("Terminate.");
     return 0;

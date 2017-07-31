@@ -1,5 +1,7 @@
 #pragma once
 #include "define_common.h"
+#include <vector>
+#include <string>
 
 using namespace std;
 namespace hukusuke {
@@ -9,24 +11,45 @@ namespace hukusuke {
 		request() {};
 		~request() {};
 
-		// Overload IF.
-		void request_if(const EX_STRUCT_INT  data    );
-		void request_if(const EX_STRUCT_CHAR data    );
-		void request_if(const EX_STRUCT_ENUM data    );
-		void request_if(const EX_STRUCT_INFO data    );
-		void request_if(const EX_STRUCT_PTR  data_ptr);
+		void request_if(const int    data    );
+		void request_if(	  char*  data    );
+		void request_if(const string data    );
+		void output();
 
 	private:
-		// Union info.
-		union EX_UNION {
-			EX_STRUCT_INT  data_int;
-			EX_STRUCT_CHAR data_char;
-			EX_STRUCT_ENUM data_enum;
-			EX_STRUCT_INFO data_info;
-			EX_STRUCT_PTR  data_ptr;
+
+		enum EX_STRUCT_TYPE {
+			EX_STRUCT_TYPE_INT,
+			EX_STRUCT_TYPE_CHAR_P,
+			EX_STRUCT_TYPE_STRING,
 		};
 
-		EX_UNION data_union_;				// Union member.
+		struct EX_STRUCT_INT {
+			int				data;
+		};
+
+		struct EX_STRUCT_CHAR_P {
+			char*			data;
+		};
+
+		struct EX_STRUCT_STRING {
+			string			data;
+		};
+
+		/*	
+			共用体を持った構造体を定義. 
+			共用体を使用すればEX_STRUCT_XXX毎に構造体を定義する必要がなくなる。
+		*/
+		struct EX_STRUCT {
+			EX_STRUCT_TYPE	type;
+			union {
+				EX_STRUCT_INT     data_int;
+				EX_STRUCT_CHAR_P  data_char_p;
+				EX_STRUCT_STRING* data_string;
+			} union_pram;
+		};
+
+		vector<EX_STRUCT>	vec_data_;		// 共有体を持つ構造体をvectorで定義.
 	};
 }
 

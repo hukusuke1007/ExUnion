@@ -1,7 +1,9 @@
 [ 15][            main] Start.
-[ 11][      request_if] EX_STRUCT_INT:  0
-[ 18][      request_if] EX_STRUCT_CHAR: CHAR
-[ 25][      request_if] EX_STRUCT_ENUM: 1
-[ 32][      request_if] EX_STRUCT_INFO: 2
-[ 39][      request_if] EX_STRUCT_PTR:  STRING
-[ 47][            main] Terminate.
+[ 15][      request_if] EX_STRUCT_TYPE_INT:    0
+[ 29][      request_if] EX_STRUCT_TYPE_CHAR_P: CHAR_P
+[ 44][      request_if] EX_STRUCT_TYPE_STRING: STRING
+[ 53][          output] ALL_OUTPUT_UNION
+[ 58][          output]  + EX_STRUCT_TYPE_INT:     0
+[ 61][          output]  + EX_STRUCT_TYPE_CHAR_P:  CHAR_P
+[ 64][          output]  + EX_STRUCT_TYPE_STRING:  STRING
+[ 34][            main] Terminate.
