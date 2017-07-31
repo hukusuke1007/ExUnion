@@ -2,10 +2,11 @@
 //
 
 #include "stdafx.h"
-#include "define_common.h"
 #include "request.h"
 #include "logout.h"
 #include  <string>
+
+#define MAX_SIZE (10)
 
 using namespace std;
 using namespace hukusuke;
@@ -15,8 +16,9 @@ int main(void)
 	LOG_OUTPUT("Start.");
 
 	// データ定義.
-	int		value_int	 = 0;
-	char*	value_char_p = new char[MAX_SIZE+1];
+	int value_int = 0;
+
+	char* value_char_p = new char[MAX_SIZE+1];
 	memset(value_char_p, 0, MAX_SIZE+1);
 	strncpy(value_char_p, "CHAR_P", MAX_SIZE);
 

@@ -1,5 +1,4 @@
 #pragma once
-#include "define_common.h"
 #include <vector>
 #include <string>
 
@@ -11,13 +10,12 @@ namespace hukusuke {
 		request() {};
 		~request() {};
 
-		void request_if(const int    data    );
-		void request_if(	  char*  data    );
-		void request_if(const string data    );
+		void request_if(const int data );
+		void request_if(char* data );
+		void request_if(const string data );
 		void output();
 
 	private:
-
 		enum EX_STRUCT_TYPE {
 			EX_STRUCT_TYPE_INT,
 			EX_STRUCT_TYPE_CHAR_P,

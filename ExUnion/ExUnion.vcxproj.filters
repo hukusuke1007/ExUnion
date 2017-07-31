@@ -24,9 +24,6 @@
     <ClInclude Include="targetver.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="define_common.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="request.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
